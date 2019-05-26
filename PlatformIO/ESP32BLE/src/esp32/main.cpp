@@ -171,7 +171,8 @@ void setup() {
   // sull'altro endpoint (molto efficiente!!) 
   sliderCharacteristic = pService->createCharacteristic( 
       SLIDER_VALUE_UUID, 
-      BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_WRITE);
+      //BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_WRITE);
+      BLECharacteristic:: BLECharacteristic::PROPERTY_WRITE);
   // Attacco l'event handler
   sliderCharacteristic->setCallbacks(new SliderValueCallbacks());
   // Non ho ben capito se serva un descrittore... funziona anche senza!
@@ -181,7 +182,7 @@ void setup() {
       BUTTON_VALUE_UUID, 
       BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_READ);
   // Attacco l'event handler
-  buttonCharacteristic->setCallbacks(new ButtonValueCallbacks());
+  //buttonCharacteristic->setCallbacks(new ButtonValueCallbacks());
 
 
   // Si parte!
